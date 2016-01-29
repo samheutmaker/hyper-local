@@ -1,0 +1,35 @@
+{
+  "name": "event-list",
+  "version": "0.0.1",
+  "description": "A MEAN stack app for posting and find events near you.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samheutmaker/event-list.git"
+  },
+  "author": "samheutmaker@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/samheutmaker/event-list/issues"
+  },
+  "homepage": "https://github.com/samheutmaker/event-list#readme",
+  "dependencies": {
+    "bcrypt": "^0.8.5",
+    "body-parser": "^1.14.2",
+    "express": "^4.13.4",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.3.7",
+    "x-ray": "^2.0.3"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^1.0.0",
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.1.1",
+    "mocha": "^2.4.5",
+    "nodemon": "^1.8.1"
+  }
+}
