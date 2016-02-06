@@ -3,14 +3,13 @@ const jsonParser = require('body-parser').json();
 const mongoose = require('mongoose');
 const basicHTTP = require(__dirname + '/../lib/basic-http');
 const authCheck = require(__dirname + '/../lib/check-token');
-
+// Models
 const User = require(__dirname + '/../models/user');
 const UserAnalytics = require(__dirname + '/../models/user-analytics');
-
+// Tracking
 const userTracking = require(__dirname + '/../lib/analytics/user-tracking');
 
 var authRouter = module.exports = exports = express.Router();
-
 
 authRouter.get('/tracking', authCheck, (req, res) => {
   UserAnalytics.find({}, (err, data) => {
@@ -55,10 +54,8 @@ authRouter.post('/register', jsonParser, (req, res) => {
         });
       }
 
-
       // Create analytics for new user
       userTracking.createNew(user._id);
-
 
       // Send Response
       res.status(200).json({
