@@ -21,6 +21,7 @@
     "body-parser": "^1.14.2",
     "express": "^4.13.4",
     "jsonwebtoken": "^5.5.4",
+    "major-a": "^1.2.22",
     "method-override": "^2.3.5",
     "mongoose": "^4.3.7",
     "x-ray": "^2.0.3"

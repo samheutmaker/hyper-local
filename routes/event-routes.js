@@ -3,7 +3,7 @@ const express = require('express');
 const jsonParser = require('body-parser').json();
 // Require Event model
 const Event = require(__dirname + '/../models/event.js');
-// Require MajorA 
+// Require MajorA
 const majorA = require('major-a');
 // Require MajorA Analytics
 const mTracking = majorA.majorAnalytics;
@@ -13,37 +13,57 @@ const mAuth = majorA.majorAuth;
 const mAdmin = majorA.majorAdmin;
 
 
-// Create new Express Router and export 
+// Create new Express Router and export
 const eventRouter = module.exports = exports = express.Router();
 
+eventRouter.get('/', mAuth(true), (req, res) => {
+	Event.find({}, (err, events) => {
+		if (err) return res.status(500).json({
+			msg: 'Error retreiving events'
+		})
+
+		res.status(200).json({
+			msg: 'Successfully retrieved',
+			events: events
+		});
+	});
+});
+
 // Get single event
-eventRouter.get('/detail/:id', mAuth, (req, res) => {
+eventRouter.get('/detail/:id', mAuth(true), (req, res) => {
 	// Find event
-	Event.findOne({_id: req.params.id}, (err, event) => {
+	Event.findOne({
+		_id: req.params.id
+	}, (err, event) => {
 		// Err finding event
-		if(err) {
+		if (err) {
 			return res.status(500).json({
 				msg: 'There was an error retrieving'
 			});
-		} 
+		}
 		// No Event found
-		if(!event) {
+		if (!event) {
 			return res.status(200).json({
 				msg: 'No event found'
 			});
 		}
 
 		// Track request
-		 mTracking.track(event._id, req.user._id);
-		 // Return event
-		 res.status(200).json({
-		 	event: event
-		 });
-	});	
+		if (req.user._id) {
+			mTracking.trackLoggedIn(event._id, req.user._id);
+		} else {
+			mTracking.trackAnon(event._id);
+		}
+		// Return event
+		res.status(200).json({
+			event: event
+		});
+	});
 });
 
+
 // Post new event, Admin only
-eventRouter.post('/new', mAdmin, jsonParser, (req, res) => {
+eventRouter.post('/new', mAuth(), jsonParser, (req, res) => {
 	// Create new event
 	var newEvent = new Event(req.body);
 	// Save params
@@ -52,10 +72,10 @@ eventRouter.post('/new', mAdmin, jsonParser, (req, res) => {
 	newEvent.date = req.body.date;
 	newEvent.postedOn = new Date();
 	newEvent.owner_id = req.user._id;
-	// Save new event 
+	// Save new event
 	newEvent.save((err, event) => {
 		// Error or no data
-		if(err || !event) {
+		if (err || !event) {
 			return res.status(500).json({
 				msg: 'Error creating event'
 			});
@@ -69,5 +89,3 @@ eventRouter.post('/new', mAdmin, jsonParser, (req, res) => {
 		});
 	})
 });
-
-	
