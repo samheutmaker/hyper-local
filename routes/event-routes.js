@@ -17,7 +17,9 @@ const mAdmin = majorA.majorAdmin;
 const eventRouter = module.exports = exports = express.Router();
 
 eventRouter.get('/', mAuth(true), (req, res) => {
-	Event.find({}, (err, events) => {
+	Event.find({
+		active: true
+	}, (err, events) => {
 		if (err) return res.status(500).json({
 			msg: 'Error retreiving events'
 		})
@@ -29,11 +31,35 @@ eventRouter.get('/', mAuth(true), (req, res) => {
 	});
 });
 
+// Gets all the events that belong to a user
+eventRouter.get('/user/:id', mAuth(true), (req, res) => {
+	Event.find({
+		owner_id: req.params.id,
+		active: true
+	}, (err, events) => {
+		if (err) {
+			return res.status(500).json({
+				msg: 'There was an error retreiving these events'
+			})
+		}
+		if (!events) {
+			return res.status(200).json({
+				msg: 'No Events found'
+			});
+		}
+		res.status(200).json({
+			msg: 'Success',
+			events: events
+		});
+	});
+});
+
 // Get single event
 eventRouter.get('/detail/:id', mAuth(true), (req, res) => {
 	// Find event
 	Event.findOne({
-		_id: req.params.id
+		_id: req.params.id,
+		active: true
 	}, (err, event) => {
 		// Err finding event
 		if (err) {
@@ -72,6 +98,7 @@ eventRouter.post('/new', mAuth(), jsonParser, (req, res) => {
 	newEvent.date = req.body.date;
 	newEvent.postedOn = new Date();
 	newEvent.owner_id = req.user._id;
+	newEvent.active = true;
 	// Save new event
 	newEvent.save((err, event) => {
 		// Error or no data
@@ -87,5 +114,33 @@ eventRouter.post('/new', mAuth(), jsonParser, (req, res) => {
 			msg: 'Successfully Created',
 			event: event
 		});
-	})
+	});
+});
+
+// Delete route == sets active property to false, does not actually delete
+eventRouter.delete('/delete/:id', mAuth(), (req, res) => {
+	console.log(req.user._id);
+	Event.update({
+		_id: req.params.id,
+		owner_id: req.user._id,
+		active: true
+	}, {
+		$set: {
+			active: false
+		}
+	}, (err, removeData) => {
+		if (err || !removeData) {
+			return res.status(500).json({
+				msg: 'There was an error deleting'
+			});
+		}
+		// Check whether an event was removed
+		var msg = (removeData.n == "0") ? 'This is not your event' :
+			'Successfully Removed';
+
+		res.status(200).json({
+			msg: msg,
+			data: removeData
+		});
+	});
 });

@@ -14,6 +14,10 @@ mongoose.connect(
 const m = require('major-a');
 const mRouter = m.majorRouter;
 const eventRouter = require(__dirname + '/routes/event-routes');
+
+const events12 = require(__dirname + '/lib/scrapers/events12');
+events12();
+
 // Set Auth Routes
 app.use('/auth', mRouter);
 app.use('/events', eventRouter);

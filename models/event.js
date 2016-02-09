@@ -4,10 +4,14 @@ const mongoose = require('mongoose');
 const eventSchema = mongoose.Schema({
   name: String,
   date: Date,
+  firstDate: String,
+  unixDate: Date,
   postedOn: Date,
   owner_id: String,
+  source: String,
   description: String,
   linkToMoreInfo: String,
+  active: Boolean,
   tags: Array,
   location: {
     area: String,
