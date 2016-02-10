@@ -1,1 +1,1 @@
-mongo apollo.modulusmongo.net:27017/yvuxe4vU -u samheutmaker -p kingpin13
+mongo apollo.modulusmongo.net:27017/yvuxe4vU -u -p 
