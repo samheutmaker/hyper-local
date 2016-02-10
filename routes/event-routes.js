@@ -16,6 +16,7 @@ const mAdmin = majorA.majorAdmin;
 // Create new Express Router and export
 const eventRouter = module.exports = exports = express.Router();
 
+// Get all events
 eventRouter.get('/', mAuth(true), (req, res) => {
 	Event.find({
 		active: true
@@ -26,6 +27,93 @@ eventRouter.get('/', mAuth(true), (req, res) => {
 
 		res.status(200).json({
 			msg: 'Successfully retrieved',
+			events: events
+		});
+	});
+});
+
+// Get user event Tracker
+eventRouter.get('/tracking', mAuth(), (req, res) => {
+	Event.find({
+		owner_id: req.user._id
+	}, (err, events) => {
+		if (err) {
+			return res.status(500).json({
+				msg: 'There was an error retreiving these events'
+			})
+		}
+		// Check if results found
+		if (!events.length) {
+			return res.status(200).json({
+				msg: 'No Events Found'
+			})
+		}
+
+		var eventIds = events.map((event, eventIndex) => {
+			return event._id;
+		});
+
+		mTracking.getTrackers(eventIds).then((trackers) => {
+			res.status(200).json({
+				msg: 'Trackers found',
+				trackers: trackers
+			});
+		});
+	});
+});
+
+// Search by time period
+eventRouter.post('/interval', mAuth(true), jsonParser, (req, res) => {
+	Event.find({
+		active: true,
+		unixDate: {
+			$gte: new Date(Date.parse(req.body.from)),
+			$lt: new Date(Date.parse(req.body.to))
+		}
+	}, (err, events) => {
+		// Check for error
+		if (err) {
+			return res.status(500).json({
+				msg: 'There was an error retreiving these events'
+			})
+		}
+		// Check if results found
+		if (!events.length) {
+			return res.status(200).json({
+				msg: 'No Events Found'
+			})
+		}
+		// Return events
+		res.status(200).json({
+			msg: 'Succesful',
+			events: events
+		});
+	});
+});
+
+// Search by query
+eventRouter.post('/search', mAuth(true), jsonParser, (req, res) => {
+	Event.find({
+		active: true,
+		tags: {
+			$in: req.body.queries
+		}
+	}, (err, events) => {
+		// Check for error
+		if (err) {
+			return res.status(500).json({
+				msg: 'There was an error retreiving these events'
+			})
+		}
+		// Check if results found
+		if (!events.length) {
+			return res.status(200).json({
+				msg: 'No Events Found'
+			})
+		}
+		// Return events
+		res.status(200).json({
+			msg: 'Succesful',
 			events: events
 		});
 	});
@@ -96,6 +184,7 @@ eventRouter.post('/new', mAuth(), jsonParser, (req, res) => {
 	newEvent.name = req.body.name;
 	newEvent.description = req.body.description;
 	newEvent.date = req.body.date;
+	newEvent.tags = req.body.tags;
 	newEvent.postedOn = new Date();
 	newEvent.owner_id = req.user._id;
 	newEvent.active = true;

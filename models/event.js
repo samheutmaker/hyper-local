@@ -12,7 +12,7 @@ const eventSchema = mongoose.Schema({
   description: String,
   linkToMoreInfo: String,
   active: Boolean,
-  tags: Array,
+  tags: [String],
   location: {
     area: String,
     address: String,
