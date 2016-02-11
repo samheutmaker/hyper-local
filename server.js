@@ -17,6 +17,8 @@ const eventRouter = require(__dirname + '/routes/event-routes');
 
 const events12 = require(__dirname + '/lib/scrapers/events12');
 events12();
+const thestranger = require(__dirname + '/lib/scrapers/thestranger');
+thestranger();
 
 // Set Auth Routes
 app.use('/auth', mRouter);

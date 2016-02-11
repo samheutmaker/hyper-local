@@ -10,10 +10,12 @@ const eventSchema = mongoose.Schema({
   owner_id: String,
   source: String,
   description: String,
+  cost: String,
   linkToMoreInfo: String,
   active: Boolean,
   tags: [String],
   location: {
+    venue: String,
     area: String,
     address: String,
     coords: {

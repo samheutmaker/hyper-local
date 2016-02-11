@@ -1,0 +1,511 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/samuel/.node/bin/node',
+1 verbose cli   '/Users/samuel/.node/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'stall' ]
+2 info using npm@2.14.7
+3 info using node@v4.2.3
+4 verbose install initial load of /Users/samuel/Desktop/Projects/event-list/package.json
+5 verbose installManyTop reading scoped package data from /Users/samuel/Desktop/Projects/event-list/node_modules/bcrypt/package.json
+6 verbose installManyTop reading scoped package data from /Users/samuel/Desktop/Projects/event-list/node_modules/body-parser/package.json
+7 verbose installManyTop reading scoped package data from /Users/samuel/Desktop/Projects/event-list/node_modules/chai/package.json
+8 verbose installManyTop reading scoped package data from /Users/samuel/Desktop/Projects/event-list/node_modules/chai-http/package.json
+9 verbose installManyTop reading scoped package data from /Users/samuel/Desktop/Projects/event-list/node_modules/express/package.json
+10 verbose installManyTop reading scoped package data from /Users/samuel/Desktop/Projects/event-list/node_modules/gulp/package.json
+11 verbose installManyTop reading scoped package data from /Users/samuel/Desktop/Projects/event-list/node_modules/gulp-sass/package.json
+12 verbose installManyTop reading scoped package data from /Users/samuel/Desktop/Projects/event-list/node_modules/jsonwebtoken/package.json
+13 verbose installManyTop reading scoped package data from /Users/samuel/Desktop/Projects/event-list/node_modules/major-a/package.json
+14 verbose installManyTop reading scoped package data from /Users/samuel/Desktop/Projects/event-list/node_modules/method-override/package.json
+15 verbose installManyTop reading scoped package data from /Users/samuel/Desktop/Projects/event-list/node_modules/mocha/package.json
+16 verbose installManyTop reading scoped package data from /Users/samuel/Desktop/Projects/event-list/node_modules/mongoose/package.json
+17 verbose installManyTop reading scoped package data from /Users/samuel/Desktop/Projects/event-list/node_modules/nodemon/package.json
+18 verbose installManyTop reading scoped package data from /Users/samuel/Desktop/Projects/event-list/node_modules/x-ray/package.json
+19 info package.json chai-http@1.0.0 No license field.
+20 info package.json x-ray@2.0.3 No license field.
+21 verbose readDependencies loading dependencies from /Users/samuel/Desktop/Projects/event-list/package.json
+22 silly cache add args [ 'stall', null ]
+23 verbose cache add spec stall
+24 silly cache add parsed spec Result {
+24 silly cache add   raw: 'stall',
+24 silly cache add   scope: null,
+24 silly cache add   name: 'stall',
+24 silly cache add   rawSpec: '',
+24 silly cache add   spec: '*',
+24 silly cache add   type: 'range' }
+25 silly addNamed stall@*
+26 verbose addNamed "*" is a valid semver range for stall
+27 silly addNameRange { name: 'stall', range: '*', hasData: false }
+28 silly mapToRegistry name stall
+29 silly mapToRegistry using default registry
+30 silly mapToRegistry registry https://registry.npmjs.org/
+31 silly mapToRegistry uri https://registry.npmjs.org/stall
+32 verbose addNameRange registry:https://registry.npmjs.org/stall not in flight; fetching
+33 verbose request uri https://registry.npmjs.org/stall
+34 verbose request no auth needed
+35 info attempt registry request try #1 at 21:07:09
+36 verbose request using bearer token for auth
+37 verbose request id 0bdf366c861d8f45
+38 verbose etag "EKBABSA4YK2KBH4D6EPWORZ0B"
+39 http request GET https://registry.npmjs.org/stall
+40 http 304 https://registry.npmjs.org/stall
+41 verbose headers { 'cache-control': 'max-age=300',
+41 verbose headers   'accept-ranges': 'bytes',
+41 verbose headers   date: 'Thu, 11 Feb 2016 05:04:32 GMT',
+41 verbose headers   via: '1.1 varnish',
+41 verbose headers   connection: 'keep-alive',
+41 verbose headers   'x-served-by': 'cache-sjc3120-SJC',
+41 verbose headers   'x-cache': 'MISS',
+41 verbose headers   'x-cache-hits': '0',
+41 verbose headers   'x-timer': 'S1455167072.062953,VS0,VE88' }
+42 silly get cb [ 304,
+42 silly get   { 'cache-control': 'max-age=300',
+42 silly get     'accept-ranges': 'bytes',
+42 silly get     date: 'Thu, 11 Feb 2016 05:04:32 GMT',
+42 silly get     via: '1.1 varnish',
+42 silly get     connection: 'keep-alive',
+42 silly get     'x-served-by': 'cache-sjc3120-SJC',
+42 silly get     'x-cache': 'MISS',
+42 silly get     'x-cache-hits': '0',
+42 silly get     'x-timer': 'S1455167072.062953,VS0,VE88' } ]
+43 verbose etag https://registry.npmjs.org/stall from cache
+44 verbose get saving stall to /Users/samuel/.npm/registry.npmjs.org/stall/.cache.json
+45 silly addNameRange number 2 { name: 'stall', range: '*', hasData: true }
+46 silly addNameRange versions [ 'stall', [ '0.0.1', '0.0.2' ] ]
+47 silly addNamed stall@0.0.2
+48 verbose addNamed "0.0.2" is a plain semver version for stall
+49 silly cache afterAdd stall@0.0.2
+50 verbose afterAdd /Users/samuel/.npm/stall/0.0.2/package/package.json not in flight; writing
+51 verbose afterAdd /Users/samuel/.npm/stall/0.0.2/package/package.json written
+52 silly install resolved [ { name: 'stall',
+52 silly install resolved     version: '0.0.2',
+52 silly install resolved     description: 'similar to yield, stall pauses the node/iojs default runloop. it will block everything else in its surrounding context until completion flag is set. calling done() resumes contextual program flow back to normal asyc',
+52 silly install resolved     dependencies: { bindings: '~1.2.1', nan: '~1.8.4' },
+52 silly install resolved     devDependencies: { mocha: '~2.1.0', should: '~4.3.1' },
+52 silly install resolved     binary: { module_name: 'stall' },
+52 silly install resolved     repository:
+52 silly install resolved      { type: 'git',
+52 silly install resolved        url: 'git+https://github.com/reqshark/stall.git' },
+52 silly install resolved     scripts: { 'travis-test': 'make check', install: 'node-gyp rebuild' },
+52 silly install resolved     author:
+52 silly install resolved      { name: 'Bent Cardan',
+52 silly install resolved        email: 'bent@nothingsatisfies.com',
+52 silly install resolved        url: 'http://req.link' },
+52 silly install resolved     license: 'beerware',
+52 silly install resolved     gypfile: true,
+52 silly install resolved     gitHead: 'd95849d2e4b0718f7ee60de3a4c9f6ae1b569e6e',
+52 silly install resolved     bugs: { url: 'https://github.com/reqshark/stall/issues' },
+52 silly install resolved     homepage: 'https://github.com/reqshark/stall#readme',
+52 silly install resolved     _id: 'stall@0.0.2',
+52 silly install resolved     _shasum: 'ebe530fd260a0d786cb1fe0f61cdaf7fd4cbaa65',
+52 silly install resolved     _from: 'stall@*',
+52 silly install resolved     _npmVersion: '2.9.0',
+52 silly install resolved     _nodeVersion: '2.0.0',
+52 silly install resolved     _npmUser: { name: 'reqshark', email: 'bent@nothingsatisfies.com' },
+52 silly install resolved     dist:
+52 silly install resolved      { shasum: 'ebe530fd260a0d786cb1fe0f61cdaf7fd4cbaa65',
+52 silly install resolved        tarball: 'http://registry.npmjs.org/stall/-/stall-0.0.2.tgz' },
+52 silly install resolved     maintainers: [ [Object] ],
+52 silly install resolved     directories: {},
+52 silly install resolved     _resolved: 'https://registry.npmjs.org/stall/-/stall-0.0.2.tgz',
+52 silly install resolved     readme: 'ERROR: No README data found!' } ]
+53 info install stall@0.0.2 into /Users/samuel/Desktop/Projects/event-list
+54 info installOne stall@0.0.2
+55 verbose installOne of stall to /Users/samuel/Desktop/Projects/event-list not in flight; installing
+56 verbose lock using /Users/samuel/.npm/_locks/stall-84cbee8cce8148b4.lock for /Users/samuel/Desktop/Projects/event-list/node_modules/stall
+57 silly install write writing stall 0.0.2 to /Users/samuel/Desktop/Projects/event-list/node_modules/stall
+58 verbose unbuild node_modules/stall
+59 silly gentlyRm /Users/samuel/Desktop/Projects/event-list/node_modules/stall is being purged from base /Users/samuel/Desktop/Projects/event-list
+60 verbose gentlyRm don't care about contents; nuking /Users/samuel/Desktop/Projects/event-list/node_modules/stall
+61 verbose tar unpack /Users/samuel/.npm/stall/0.0.2/package.tgz
+62 verbose tar unpacking to /Users/samuel/Desktop/Projects/event-list/node_modules/stall
+63 silly gentlyRm /Users/samuel/Desktop/Projects/event-list/node_modules/stall is being purged
+64 verbose gentlyRm don't care about contents; nuking /Users/samuel/Desktop/Projects/event-list/node_modules/stall
+65 silly gunzTarPerm modes [ '755', '644' ]
+66 silly gunzTarPerm extractEntry package.json
+67 silly gunzTarPerm extractEntry .npmignore
+68 silly gunzTarPerm extractEntry README.md
+69 silly gunzTarPerm extractEntry index.js
+70 silly gunzTarPerm extractEntry binding.gyp
+71 silly gunzTarPerm extractEntry .travis.yml
+72 silly gunzTarPerm extractEntry Makefile
+73 silly gunzTarPerm extractEntry stall.cc
+74 silly gunzTarPerm extractEntry test/stall.function.js
+75 silly gunzTarPerm extractEntry test/stall.sleep.js
+76 verbose write writing to /Users/samuel/Desktop/Projects/event-list/node_modules/stall/package.json
+77 info preinstall stall@0.0.2
+78 verbose readDependencies loading dependencies from /Users/samuel/Desktop/Projects/event-list/node_modules/stall/package.json
+79 silly prepareForInstallMany adding bindings@~1.2.1 from stall dependencies
+80 silly prepareForInstallMany adding nan@~1.8.4 from stall dependencies
+81 verbose readDependencies loading dependencies from /Users/samuel/Desktop/Projects/event-list/node_modules/stall/package.json
+82 silly cache add args [ 'nan@~1.8.4', null ]
+83 verbose cache add spec nan@~1.8.4
+84 silly cache add parsed spec Result {
+84 silly cache add   raw: 'nan@~1.8.4',
+84 silly cache add   scope: null,
+84 silly cache add   name: 'nan',
+84 silly cache add   rawSpec: '~1.8.4',
+84 silly cache add   spec: '>=1.8.4 <1.9.0',
+84 silly cache add   type: 'range' }
+85 silly addNamed nan@>=1.8.4 <1.9.0
+86 verbose addNamed ">=1.8.4 <1.9.0" is a valid semver range for nan
+87 silly addNameRange { name: 'nan', range: '>=1.8.4 <1.9.0', hasData: false }
+88 silly mapToRegistry name nan
+89 silly mapToRegistry using default registry
+90 silly mapToRegistry registry https://registry.npmjs.org/
+91 silly mapToRegistry uri https://registry.npmjs.org/nan
+92 verbose addNameRange registry:https://registry.npmjs.org/nan not in flight; fetching
+93 silly cache add args [ 'bindings@~1.2.1', null ]
+94 verbose cache add spec bindings@~1.2.1
+95 silly cache add parsed spec Result {
+95 silly cache add   raw: 'bindings@~1.2.1',
+95 silly cache add   scope: null,
+95 silly cache add   name: 'bindings',
+95 silly cache add   rawSpec: '~1.2.1',
+95 silly cache add   spec: '>=1.2.1 <1.3.0',
+95 silly cache add   type: 'range' }
+96 silly addNamed bindings@>=1.2.1 <1.3.0
+97 verbose addNamed ">=1.2.1 <1.3.0" is a valid semver range for bindings
+98 silly addNameRange { name: 'bindings', range: '>=1.2.1 <1.3.0', hasData: false }
+99 silly mapToRegistry name bindings
+100 silly mapToRegistry using default registry
+101 silly mapToRegistry registry https://registry.npmjs.org/
+102 silly mapToRegistry uri https://registry.npmjs.org/bindings
+103 verbose addNameRange registry:https://registry.npmjs.org/bindings not in flight; fetching
+104 verbose request uri https://registry.npmjs.org/nan
+105 verbose request no auth needed
+106 info attempt registry request try #1 at 21:07:10
+107 verbose request using bearer token for auth
+108 verbose etag "7Y2U1A5TWU1O0YTKGMD4FB8ZN"
+109 http request GET https://registry.npmjs.org/nan
+110 verbose request uri https://registry.npmjs.org/bindings
+111 verbose request no auth needed
+112 info attempt registry request try #1 at 21:07:10
+113 verbose request using bearer token for auth
+114 verbose etag "1LLBF9OH58DLBEL4629U6032D"
+115 http request GET https://registry.npmjs.org/bindings
+116 http 304 https://registry.npmjs.org/bindings
+117 verbose headers { 'cache-control': 'max-age=300',
+117 verbose headers   'accept-ranges': 'bytes',
+117 verbose headers   date: 'Thu, 11 Feb 2016 05:04:32 GMT',
+117 verbose headers   via: '1.1 varnish',
+117 verbose headers   connection: 'keep-alive',
+117 verbose headers   'x-served-by': 'cache-sjc3128-SJC',
+117 verbose headers   'x-cache': 'MISS',
+117 verbose headers   'x-cache-hits': '0',
+117 verbose headers   'x-timer': 'S1455167072.443074,VS0,VE179' }
+118 silly get cb [ 304,
+118 silly get   { 'cache-control': 'max-age=300',
+118 silly get     'accept-ranges': 'bytes',
+118 silly get     date: 'Thu, 11 Feb 2016 05:04:32 GMT',
+118 silly get     via: '1.1 varnish',
+118 silly get     connection: 'keep-alive',
+118 silly get     'x-served-by': 'cache-sjc3128-SJC',
+118 silly get     'x-cache': 'MISS',
+118 silly get     'x-cache-hits': '0',
+118 silly get     'x-timer': 'S1455167072.443074,VS0,VE179' } ]
+119 verbose etag https://registry.npmjs.org/bindings from cache
+120 verbose get saving bindings to /Users/samuel/.npm/registry.npmjs.org/bindings/.cache.json
+121 silly addNameRange number 2 { name: 'bindings', range: '>=1.2.1 <1.3.0', hasData: true }
+122 silly addNameRange versions [ 'bindings',
+122 silly addNameRange   [ '0.0.1',
+122 silly addNameRange     '0.1.0',
+122 silly addNameRange     '0.1.1',
+122 silly addNameRange     '0.2.0',
+122 silly addNameRange     '0.2.1',
+122 silly addNameRange     '0.2.2',
+122 silly addNameRange     '0.2.3',
+122 silly addNameRange     '0.2.4',
+122 silly addNameRange     '0.3.0',
+122 silly addNameRange     '0.4.0',
+122 silly addNameRange     '1.0.0',
+122 silly addNameRange     '1.1.0',
+122 silly addNameRange     '1.1.1',
+122 silly addNameRange     '1.2.0',
+122 silly addNameRange     '1.2.1' ] ]
+123 silly addNamed bindings@1.2.1
+124 verbose addNamed "1.2.1" is a plain semver version for bindings
+125 silly cache afterAdd bindings@1.2.1
+126 verbose afterAdd /Users/samuel/.npm/bindings/1.2.1/package/package.json not in flight; writing
+127 verbose afterAdd /Users/samuel/.npm/bindings/1.2.1/package/package.json written
+128 http 304 https://registry.npmjs.org/nan
+129 verbose headers { 'cache-control': 'max-age=300',
+129 verbose headers   'accept-ranges': 'bytes',
+129 verbose headers   date: 'Thu, 11 Feb 2016 05:04:32 GMT',
+129 verbose headers   via: '1.1 varnish',
+129 verbose headers   connection: 'keep-alive',
+129 verbose headers   'x-served-by': 'cache-sjc3122-SJC',
+129 verbose headers   'x-cache': 'MISS',
+129 verbose headers   'x-cache-hits': '0',
+129 verbose headers   'x-timer': 'S1455167072.554982,VS0,VE172' }
+130 silly get cb [ 304,
+130 silly get   { 'cache-control': 'max-age=300',
+130 silly get     'accept-ranges': 'bytes',
+130 silly get     date: 'Thu, 11 Feb 2016 05:04:32 GMT',
+130 silly get     via: '1.1 varnish',
+130 silly get     connection: 'keep-alive',
+130 silly get     'x-served-by': 'cache-sjc3122-SJC',
+130 silly get     'x-cache': 'MISS',
+130 silly get     'x-cache-hits': '0',
+130 silly get     'x-timer': 'S1455167072.554982,VS0,VE172' } ]
+131 verbose etag https://registry.npmjs.org/nan from cache
+132 verbose get saving nan to /Users/samuel/.npm/registry.npmjs.org/nan/.cache.json
+133 silly addNameRange number 2 { name: 'nan', range: '>=1.8.4 <1.9.0', hasData: true }
+134 silly addNameRange versions [ 'nan',
+134 silly addNameRange   [ '0.3.0-wip',
+134 silly addNameRange     '0.3.0-wip2',
+134 silly addNameRange     '0.3.0',
+134 silly addNameRange     '0.3.1',
+134 silly addNameRange     '0.3.2',
+134 silly addNameRange     '0.4.0',
+134 silly addNameRange     '0.4.1',
+134 silly addNameRange     '0.4.2',
+134 silly addNameRange     '0.4.3',
+134 silly addNameRange     '0.4.4',
+134 silly addNameRange     '0.5.0',
+134 silly addNameRange     '0.5.1',
+134 silly addNameRange     '0.5.2',
+134 silly addNameRange     '0.6.0',
+134 silly addNameRange     '0.7.0',
+134 silly addNameRange     '0.7.1',
+134 silly addNameRange     '0.8.0',
+134 silly addNameRange     '1.0.0',
+134 silly addNameRange     '1.1.0',
+134 silly addNameRange     '1.1.1',
+134 silly addNameRange     '1.1.2',
+134 silly addNameRange     '1.2.0',
+134 silly addNameRange     '1.3.0',
+134 silly addNameRange     '1.4.0',
+134 silly addNameRange     '1.4.1',
+134 silly addNameRange     '1.5.0',
+134 silly addNameRange     '1.4.2',
+134 silly addNameRange     '1.4.3',
+134 silly addNameRange     '1.5.1',
+134 silly addNameRange     '1.5.2',
+134 silly addNameRange     '1.6.0',
+134 silly addNameRange     '1.5.3',
+134 silly addNameRange     '1.6.1',
+134 silly addNameRange     '1.6.2',
+134 silly addNameRange     '1.7.0',
+134 silly addNameRange     '1.8.0',
+134 silly addNameRange     '1.8.1',
+134 silly addNameRange     '1.8.2',
+134 silly addNameRange     '1.8.3',
+134 silly addNameRange     '1.8.4',
+134 silly addNameRange     '1.9.0',
+134 silly addNameRange     '2.0.0',
+134 silly addNameRange     '2.0.1',
+134 silly addNameRange     '2.0.2',
+134 silly addNameRange     '2.0.3',
+134 silly addNameRange     '2.0.4',
+134 silly addNameRange     '2.0.5',
+134 silly addNameRange     '2.0.6',
+134 silly addNameRange     '2.0.7',
+134 silly addNameRange     '2.0.8',
+134 silly addNameRange     '2.0.9',
+134 silly addNameRange     '2.1.0',
+134 silly addNameRange     '2.2.0' ] ]
+135 silly addNamed nan@1.8.4
+136 verbose addNamed "1.8.4" is a plain semver version for nan
+137 silly cache afterAdd nan@1.8.4
+138 verbose afterAdd /Users/samuel/.npm/nan/1.8.4/package/package.json not in flight; writing
+139 verbose afterAdd /Users/samuel/.npm/nan/1.8.4/package/package.json written
+140 silly install resolved [ { name: 'bindings',
+140 silly install resolved     description: 'Helper module for loading your native module\'s .node file',
+140 silly install resolved     keywords: [ 'native', 'addon', 'bindings', 'gyp', 'waf', 'c', 'c++' ],
+140 silly install resolved     version: '1.2.1',
+140 silly install resolved     author:
+140 silly install resolved      { name: 'Nathan Rajlich',
+140 silly install resolved        email: 'nathan@tootallnate.net',
+140 silly install resolved        url: 'http://tootallnate.net' },
+140 silly install resolved     repository:
+140 silly install resolved      { type: 'git',
+140 silly install resolved        url: 'git://github.com/TooTallNate/node-bindings.git' },
+140 silly install resolved     main: './bindings.js',
+140 silly install resolved     bugs: { url: 'https://github.com/TooTallNate/node-bindings/issues' },
+140 silly install resolved     homepage: 'https://github.com/TooTallNate/node-bindings',
+140 silly install resolved     license: 'MIT',
+140 silly install resolved     gitHead: 'e404152ee27f8478ccbc7122ee051246e8e5ec02',
+140 silly install resolved     _id: 'bindings@1.2.1',
+140 silly install resolved     scripts: {},
+140 silly install resolved     _shasum: '14ad6113812d2d37d72e67b4cacb4bb726505f11',
+140 silly install resolved     _from: 'bindings@>=1.2.1 <1.3.0',
+140 silly install resolved     _npmVersion: '1.4.14',
+140 silly install resolved     _npmUser: { name: 'tootallnate', email: 'nathan@tootallnate.net' },
+140 silly install resolved     maintainers: [ [Object], [Object] ],
+140 silly install resolved     dist:
+140 silly install resolved      { shasum: '14ad6113812d2d37d72e67b4cacb4bb726505f11',
+140 silly install resolved        tarball: 'http://registry.npmjs.org/bindings/-/bindings-1.2.1.tgz' },
+140 silly install resolved     directories: {},
+140 silly install resolved     _resolved: 'https://registry.npmjs.org/bindings/-/bindings-1.2.1.tgz',
+140 silly install resolved     readme: 'ERROR: No README data found!' },
+140 silly install resolved   { name: 'nan',
+140 silly install resolved     version: '1.8.4',
+140 silly install resolved     description: 'Native Abstractions for Node.js: C++ header for Node 0.8->0.12 compatibility',
+140 silly install resolved     main: 'include_dirs.js',
+140 silly install resolved     repository: { type: 'git', url: 'git://github.com/iojs/nan.git' },
+140 silly install resolved     scripts:
+140 silly install resolved      { test: 'tap --gc test/js/*-test.js',
+140 silly install resolved        'rebuild-tests': 'pangyp rebuild --directory test' },
+140 silly install resolved     contributors:
+140 silly install resolved      [ [Object],
+140 silly install resolved        [Object],
+140 silly install resolved        [Object],
+140 silly install resolved        [Object],
+140 silly install resolved        [Object],
+140 silly install resolved        [Object],
+140 silly install resolved        [Object] ],
+140 silly install resolved     devDependencies:
+140 silly install resolved      { bindings: '~1.2.1',
+140 silly install resolved        'node-gyp': '~1.0.2',
+140 silly install resolved        pangyp: '~2.0.1',
+140 silly install resolved        tap: '~0.7.1',
+140 silly install resolved        xtend: '~4.0.0' },
+140 silly install resolved     license: 'MIT',
+140 silly install resolved     gitHead: 'ed3bbf4ced0cf7937b4e4164766797f71aa97f3d',
+140 silly install resolved     bugs: { url: 'https://github.com/iojs/nan/issues' },
+140 silly install resolved     homepage: 'https://github.com/iojs/nan#readme',
+140 silly install resolved     _id: 'nan@1.8.4',
+140 silly install resolved     _shasum: '3c76b5382eab33e44b758d2813ca9d92e9342f34',
+140 silly install resolved     _from: 'nan@>=1.8.4 <1.9.0',
+140 silly install resolved     _npmVersion: '2.8.3',
+140 silly install resolved     _nodeVersion: '0.12.2',
+140 silly install resolved     _npmUser: { name: 'kkoopa', email: 'bbyholm@abo.fi' },
+140 silly install resolved     maintainers: [ [Object], [Object] ],
+140 silly install resolved     dist:
+140 silly install resolved      { shasum: '3c76b5382eab33e44b758d2813ca9d92e9342f34',
+140 silly install resolved        tarball: 'http://registry.npmjs.org/nan/-/nan-1.8.4.tgz' },
+140 silly install resolved     directories: {},
+140 silly install resolved     _resolved: 'https://registry.npmjs.org/nan/-/nan-1.8.4.tgz',
+140 silly install resolved     readme: 'ERROR: No README data found!' } ]
+141 info install bindings@1.2.1 into /Users/samuel/Desktop/Projects/event-list/node_modules/stall
+142 info install nan@1.8.4 into /Users/samuel/Desktop/Projects/event-list/node_modules/stall
+143 info installOne bindings@1.2.1
+144 verbose installOne of bindings to /Users/samuel/Desktop/Projects/event-list/node_modules/stall not in flight; installing
+145 info installOne nan@1.8.4
+146 verbose installOne of nan to /Users/samuel/Desktop/Projects/event-list/node_modules/stall not in flight; installing
+147 verbose lock using /Users/samuel/.npm/_locks/bindings-31f101e6857b45bb.lock for /Users/samuel/Desktop/Projects/event-list/node_modules/stall/node_modules/bindings
+148 verbose lock using /Users/samuel/.npm/_locks/nan-26b4f73027a54778.lock for /Users/samuel/Desktop/Projects/event-list/node_modules/stall/node_modules/nan
+149 silly install write writing bindings 1.2.1 to /Users/samuel/Desktop/Projects/event-list/node_modules/stall/node_modules/bindings
+150 silly install write writing nan 1.8.4 to /Users/samuel/Desktop/Projects/event-list/node_modules/stall/node_modules/nan
+151 verbose unbuild node_modules/stall/node_modules/bindings
+152 silly gentlyRm /Users/samuel/Desktop/Projects/event-list/node_modules/stall/node_modules/bindings is being purged from base /Users/samuel/Desktop/Projects/event-list
+153 verbose gentlyRm don't care about contents; nuking /Users/samuel/Desktop/Projects/event-list/node_modules/stall/node_modules/bindings
+154 verbose unbuild node_modules/stall/node_modules/nan
+155 verbose tar unpack /Users/samuel/.npm/bindings/1.2.1/package.tgz
+156 verbose tar unpacking to /Users/samuel/Desktop/Projects/event-list/node_modules/stall/node_modules/bindings
+157 silly gentlyRm /Users/samuel/Desktop/Projects/event-list/node_modules/stall/node_modules/bindings is being purged
+158 verbose gentlyRm don't care about contents; nuking /Users/samuel/Desktop/Projects/event-list/node_modules/stall/node_modules/bindings
+159 silly gunzTarPerm modes [ '755', '644' ]
+160 silly gentlyRm /Users/samuel/Desktop/Projects/event-list/node_modules/stall/node_modules/nan is being purged from base /Users/samuel/Desktop/Projects/event-list
+161 verbose gentlyRm don't care about contents; nuking /Users/samuel/Desktop/Projects/event-list/node_modules/stall/node_modules/nan
+162 verbose tar unpack /Users/samuel/.npm/nan/1.8.4/package.tgz
+163 verbose tar unpacking to /Users/samuel/Desktop/Projects/event-list/node_modules/stall/node_modules/nan
+164 silly gentlyRm /Users/samuel/Desktop/Projects/event-list/node_modules/stall/node_modules/nan is being purged
+165 verbose gentlyRm don't care about contents; nuking /Users/samuel/Desktop/Projects/event-list/node_modules/stall/node_modules/nan
+166 silly gunzTarPerm modes [ '755', '644' ]
+167 silly gunzTarPerm extractEntry package.json
+168 silly gunzTarPerm extractEntry package.json
+169 silly gunzTarPerm modified mode [ 'package.json', 436, 420 ]
+170 silly gunzTarPerm extractEntry README.md
+171 silly gunzTarPerm extractEntry bindings.js
+172 silly gunzTarPerm extractEntry README.md
+173 silly gunzTarPerm modified mode [ 'README.md', 436, 420 ]
+174 silly gunzTarPerm extractEntry include_dirs.js
+175 silly gunzTarPerm modified mode [ 'include_dirs.js', 436, 420 ]
+176 silly gunzTarPerm extractEntry LICENSE.md
+177 silly gunzTarPerm modified mode [ 'LICENSE.md', 436, 420 ]
+178 silly gunzTarPerm extractEntry .dntrc
+179 silly gunzTarPerm modified mode [ '.dntrc', 436, 420 ]
+180 silly gunzTarPerm extractEntry appveyor.yml
+181 silly gunzTarPerm modified mode [ 'appveyor.yml', 436, 420 ]
+182 silly gunzTarPerm extractEntry nan.h
+183 silly gunzTarPerm modified mode [ 'nan.h', 436, 420 ]
+184 silly gunzTarPerm extractEntry nan_implementation_12_inl.h
+185 silly gunzTarPerm modified mode [ 'nan_implementation_12_inl.h', 436, 420 ]
+186 silly gunzTarPerm extractEntry nan_implementation_pre_12_inl.h
+187 silly gunzTarPerm modified mode [ 'nan_implementation_pre_12_inl.h', 436, 420 ]
+188 silly gunzTarPerm extractEntry nan_new.h
+189 silly gunzTarPerm modified mode [ 'nan_new.h', 436, 420 ]
+190 verbose write writing to /Users/samuel/Desktop/Projects/event-list/node_modules/stall/node_modules/bindings/package.json
+191 silly gunzTarPerm extractEntry nan_string_bytes.h
+192 silly gunzTarPerm modified mode [ 'nan_string_bytes.h', 436, 420 ]
+193 silly gunzTarPerm extractEntry CHANGELOG.md
+194 silly gunzTarPerm modified mode [ 'CHANGELOG.md', 436, 420 ]
+195 info preinstall bindings@1.2.1
+196 verbose readDependencies loading dependencies from /Users/samuel/Desktop/Projects/event-list/node_modules/stall/node_modules/bindings/package.json
+197 verbose readDependencies loading dependencies from /Users/samuel/Desktop/Projects/event-list/node_modules/stall/node_modules/bindings/package.json
+198 silly install resolved []
+199 verbose about to build /Users/samuel/Desktop/Projects/event-list/node_modules/stall/node_modules/bindings
+200 info build /Users/samuel/Desktop/Projects/event-list/node_modules/stall/node_modules/bindings
+201 info linkStuff bindings@1.2.1
+202 silly linkStuff bindings@1.2.1 has /Users/samuel/Desktop/Projects/event-list/node_modules/stall/node_modules as its parent node_modules
+203 verbose linkBins bindings@1.2.1
+204 verbose linkMans bindings@1.2.1
+205 verbose rebuildBundles bindings@1.2.1
+206 info install bindings@1.2.1
+207 info postinstall bindings@1.2.1
+208 verbose unlock done using /Users/samuel/.npm/_locks/bindings-31f101e6857b45bb.lock for /Users/samuel/Desktop/Projects/event-list/node_modules/stall/node_modules/bindings
+209 verbose write writing to /Users/samuel/Desktop/Projects/event-list/node_modules/stall/node_modules/nan/package.json
+210 info preinstall nan@1.8.4
+211 verbose readDependencies loading dependencies from /Users/samuel/Desktop/Projects/event-list/node_modules/stall/node_modules/nan/package.json
+212 verbose readDependencies loading dependencies from /Users/samuel/Desktop/Projects/event-list/node_modules/stall/node_modules/nan/package.json
+213 silly install resolved []
+214 verbose about to build /Users/samuel/Desktop/Projects/event-list/node_modules/stall/node_modules/nan
+215 info build /Users/samuel/Desktop/Projects/event-list/node_modules/stall/node_modules/nan
+216 info linkStuff nan@1.8.4
+217 silly linkStuff nan@1.8.4 has /Users/samuel/Desktop/Projects/event-list/node_modules/stall/node_modules as its parent node_modules
+218 verbose linkBins nan@1.8.4
+219 verbose linkMans nan@1.8.4
+220 verbose rebuildBundles nan@1.8.4
+221 info install nan@1.8.4
+222 info postinstall nan@1.8.4
+223 verbose unlock done using /Users/samuel/.npm/_locks/nan-26b4f73027a54778.lock for /Users/samuel/Desktop/Projects/event-list/node_modules/stall/node_modules/nan
+224 verbose about to build /Users/samuel/Desktop/Projects/event-list/node_modules/stall
+225 info build /Users/samuel/Desktop/Projects/event-list/node_modules/stall
+226 info linkStuff stall@0.0.2
+227 silly linkStuff stall@0.0.2 has /Users/samuel/Desktop/Projects/event-list/node_modules as its parent node_modules
+228 verbose linkBins stall@0.0.2
+229 verbose linkMans stall@0.0.2
+230 verbose rebuildBundles stall@0.0.2
+231 verbose rebuildBundles [ 'bindings', 'nan' ]
+232 info install stall@0.0.2
+233 verbose unsafe-perm in lifecycle true
+234 info stall@0.0.2 Failed to exec install script
+235 verbose unlock done using /Users/samuel/.npm/_locks/stall-84cbee8cce8148b4.lock for /Users/samuel/Desktop/Projects/event-list/node_modules/stall
+236 verbose stack Error: stall@0.0.2 install: `node-gyp rebuild`
+236 verbose stack Exit status 1
+236 verbose stack     at EventEmitter.<anonymous> (/Users/samuel/.node/lib/node_modules/npm/lib/utils/lifecycle.js:214:16)
+236 verbose stack     at emitTwo (events.js:87:13)
+236 verbose stack     at EventEmitter.emit (events.js:172:7)
+236 verbose stack     at ChildProcess.<anonymous> (/Users/samuel/.node/lib/node_modules/npm/lib/utils/spawn.js:24:14)
+236 verbose stack     at emitTwo (events.js:87:13)
+236 verbose stack     at ChildProcess.emit (events.js:172:7)
+236 verbose stack     at maybeClose (internal/child_process.js:818:16)
+236 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+237 verbose pkgid stall@0.0.2
+238 verbose cwd /Users/samuel/Desktop/Projects/event-list
+239 error Darwin 15.3.0
+240 error argv "/Users/samuel/.node/bin/node" "/Users/samuel/.node/bin/npm" "install" "stall"
+241 error node v4.2.3
+242 error npm  v2.14.7
+243 error code ELIFECYCLE
+244 error stall@0.0.2 install: `node-gyp rebuild`
+244 error Exit status 1
+245 error Failed at the stall@0.0.2 install script 'node-gyp rebuild'.
+245 error This is most likely a problem with the stall package,
+245 error not with npm itself.
+245 error Tell the author that this fails on your system:
+245 error     node-gyp rebuild
+245 error You can get their info via:
+245 error     npm owner ls stall
+245 error There is likely additional logging output above.
+246 verbose exit [ 1, true ]
+247 verbose unbuild node_modules/stall
+248 info preuninstall stall@0.0.2
+249 info uninstall stall@0.0.2
+250 verbose unbuild rmStuff stall@0.0.2 from /Users/samuel/Desktop/Projects/event-list/node_modules
+251 info postuninstall stall@0.0.2
+252 silly gentlyRm /Users/samuel/Desktop/Projects/event-list/node_modules/stall is being purged from base /Users/samuel/Desktop/Projects/event-list
+253 verbose gentlyRm don't care about contents; nuking /Users/samuel/Desktop/Projects/event-list/node_modules/stall
+254 silly vacuum-fs purging /Users/samuel/Desktop/Projects/event-list/node_modules/stall
+255 silly vacuum-fs quitting because other entries in /Users/samuel/Desktop/Projects/event-list/node_modules
