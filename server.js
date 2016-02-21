@@ -1,29 +1,34 @@
 const express = require('express');
 const mongoose = require('mongoose');
-
 // Create Express App
 const app = express();
-// Set static directory
-app.use(express.static(__dirname + '/www'));
 // Set PORT
 const PORT = process.env.port || 8888;
+// Set DB
+const dbString = process.env.MONGO_URI || 'mongodb://samheutmaker:kingpin13@apollo.modulusmongo.net:27017/yvuxe4vU';
 // Connect to DB
-mongoose.connect(
-  'mongodb://samheutmaker:kingpin13@apollo.modulusmongo.net:27017/yvuxe4vU');
+mongoose.connect(dbString);
 // Require MajorA
 const m = require('major-a');
+// Auth Routes
 const mRouter = m.majorRouter;
+// Routes
 const eventRouter = require(__dirname + '/routes/event-routes');
+const searchRouter = require(__dirname + '/routes/search-routes');
 
-const events12 = require(__dirname + '/lib/scrapers/events12');
-// events12();
-const thestranger = require(__dirname + '/lib/scrapers/thestranger');
-thestranger();
+// Scraping Util
+// const events12 = require(__dirname + '/lib/scrapers/events12');
+// // events12();
+// const thestranger = require(__dirname + '/lib/scrapers/thestranger');
+// thestranger();
 
 // Set Auth Routes
 app.use('/auth', mRouter);
-app.use('/events', eventRouter);
+// Event Routes
+app.use('/api/events', eventRouter);
+// Search Routes
+app.use('/api/events/search', searchRouter);
 // Start Server
 app.listen(PORT, () => {
-  console.log('Live on PORT ' + PORT);
+  console.log('Event-list API live on port ' + PORT);
 });
