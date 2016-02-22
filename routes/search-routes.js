@@ -52,24 +52,35 @@ searchRouter.get('/all', (req, res) => {
   });
 });
 
+
+
 // Get events by interval and query
 searchRouter.post('/', jsonParser, (req, res) => {
+
+  // To remove tag from search object or not
+  var removeTag = false;
+
   // Search params
   var searchParams = {
     active: true
   };
 
   // Search query
-  searchParams.tags = (req.body.queryArray) ? {
-    $in: req.body.queryArray
-  } : undefined;
+  if (req.body.queryArray) {
+    if (req.body.queryArray.length > 0) {
+      searchParams.tags = {
+        $in: req.body.queryArray
+      }
+    }
+
+  }
 
   // Search Interval
   searchParams.unixDate = (req.body.to) ? {
     $gte: Date.parse(req.body.from),
     $lt: Date.parse(req.body.to)
   } : {
-    $gte: Date.parse(req.body.from)
+    $gte: (req.body.from) ? Date.parse(req.body.from) : Date.parse(new Date())
   };
   // Find Events
   Event.find(searchParams, (err, events) => {
