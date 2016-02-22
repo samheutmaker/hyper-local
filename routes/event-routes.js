@@ -2,7 +2,11 @@ const express = require('express');
 // Require Json Parser to handle POST
 const jsonParser = require('body-parser').json();
 // Require Event model
-const Event = require(__dirname + '/../models/event.js');
+const Event = require(__dirname + '/../models/event');
+// Geo-coding middleware
+const location = require(__dirname + '/../lib/new-event/geocode');
+// Tag Middleware
+const tags = require(__dirname + '/../lib/new-event/tags');
 // Require MajorA
 const majorA = require('major-a');
 // Require MajorA Analytics
@@ -58,16 +62,30 @@ eventRouter.get('/detail/:id', mAuth(true), (req, res) => {
 
 
 // Post new event
-eventRouter.post('/create', mAuth(), jsonParser, (req, res) => {
+eventRouter.post('/create', mAuth(), jsonParser, location, 
+  tags, (req, res) => {
+  console.log(req.body);
   // Create new event
   var newEvent = new Event(req.body);
   // Save params
   newEvent.name = req.body.name;
-  newEvent.description = req.body.description;
   newEvent.unixDate = req.body.unixDate;
-  newEvent.tags = req.body.tags;
+  newEvent.date = req.body.date;
+  newEvent.lastDate = req.body.lastDate;
   newEvent.postedOn = new Date();
   newEvent.owner_id = req.user._id;
+  newEvent.source = req.body.source;
+  newEvent.description = req.body.description;
+  newEvent.cost = req.body.cost;
+  newEvent.free = (req.body.cost) ? false : true;
+  newEvent.linkToMoreInfo = req.body.linkToMoreInfo;
+  newEvent.linkToTicketInfo = req.body.linkToTicketInfo;
+  newEvent.phone = req.body.phone;
+  newEvent.active = true;
+  newEvent.tags = req.body.tags;
+  newEvent.location = req.body.location;
+  
+  
   newEvent.active = true;
   // Save new event
   newEvent.save((err, event) => {

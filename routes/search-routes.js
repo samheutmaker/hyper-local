@@ -40,7 +40,7 @@ searchRouter.get('/tracking', mAuth(), (req, res) => {
 });
 
 // Get all events
-searchRouter.get('/', (req, res) => {
+searchRouter.get('/all', (req, res) => {
   Event.find({
     active: true
   }, (err, events) => {
@@ -51,6 +51,33 @@ searchRouter.get('/', (req, res) => {
     res.status(200).json(events);
   });
 });
+
+// Get events by interval and query
+searchRouter.post('/', jsonParser, (req, res) => {
+  // Search params
+  var searchParams = {
+    active: true
+  };
+  // Search query
+  searchParams.tags = (req.body.queryArray) ? req.body.queryArray : undefined;
+  // Search Interval
+  searchParams.unixDate = (req.body.to) ? {
+    $gte: Date.parse(req.body.from),
+    $lt: Date.parse(req.body.to)
+  } : {
+    $gte: Date.parse(req.body.from)
+  };
+  // Find Events
+  Event.find(searchParams, (err, events) => {
+    // DB Error
+    if (err) return e.dbFindError(err, res);
+    // No Results
+    if (!events.length) return e.noContent(res);
+    // Respond with events
+    res.status(200).json(events);
+  });
+});
+
 
 
 // Search by query
@@ -75,10 +102,7 @@ searchRouter.post('/query', jsonParser, (req, res) => {
 searchRouter.post('/interval', jsonParser, (req, res) => {
   Event.find({
     active: true,
-    unixDate: {
-      $gte: Date.parse(req.body.from),
-      $lt: Date.parse(req.body.to)
-    }
+    unixDate:
   }, (err, events) => {
     // DB Error
     if (err) return e.dbFindError(err, res);

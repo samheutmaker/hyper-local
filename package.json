@@ -27,6 +27,8 @@
     "method-override": "^2.3.5",
     "mocha": "^2.4.5",
     "mongoose": "^4.3.7",
+    "node-geocoder": "^3.7.0",
+    "q": "^1.4.1",
     "x-ray": "^2.0.3"
   },
   "devDependencies": {
@@ -34,6 +36,7 @@
     "chai-http": "^1.0.0",
     "mocha": "^2.4.5",
     "nodemon": "^1.8.1",
+    "request": "^2.69.0",
     "staff": "^1.0.1"
   }
 }

@@ -16,6 +16,9 @@ const mRouter = m.majorRouter;
 const eventRouter = require(__dirname + '/routes/event-routes');
 const searchRouter = require(__dirname + '/routes/search-routes');
 
+const events12 = require(__dirname + '/util/scrapers/events12');
+events12();
+
 // Set Auth Routes
 app.use('/auth', mRouter);
 // Event Routes
