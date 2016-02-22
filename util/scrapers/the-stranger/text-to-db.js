@@ -9,7 +9,7 @@ allContent.length = 2500;
 
 var noUnixDate = [];
 
-staff.waitAndFire(0, allContent.length, function(x) {
+staff.waitAndFire(390, allContent.length, function(x) {
 
 	if (allContent[x]) {
 		xray(allContent[x], '', {

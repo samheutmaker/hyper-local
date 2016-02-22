@@ -74,6 +74,11 @@ searchRouter.post('/', jsonParser, (req, res) => {
     }
 
   }
+  
+  // Source
+  if(req.body.source) {
+    searchParams.source = req.body.source;
+  }
 
   // Search Interval
   searchParams.unixDate = (req.body.to) ? {
