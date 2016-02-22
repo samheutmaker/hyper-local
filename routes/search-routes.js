@@ -58,8 +58,12 @@ searchRouter.post('/', jsonParser, (req, res) => {
   var searchParams = {
     active: true
   };
+
   // Search query
-  searchParams.tags = (req.body.queryArray) ? req.body.queryArray : undefined;
+  searchParams.tags = (req.body.queryArray) ? {
+    $in: req.body.queryArray
+  } : undefined;
+
   // Search Interval
   searchParams.unixDate = (req.body.to) ? {
     $gte: Date.parse(req.body.from),
@@ -77,7 +81,6 @@ searchRouter.post('/', jsonParser, (req, res) => {
     res.status(200).json(events);
   });
 });
-
 
 
 // Search by query
@@ -102,7 +105,10 @@ searchRouter.post('/query', jsonParser, (req, res) => {
 searchRouter.post('/interval', jsonParser, (req, res) => {
   Event.find({
     active: true,
-    unixDate:
+    unixDate: {
+      $gte: Date.parse(req.body.from),
+      $lt: Date.parse(req.body.to)
+    }
   }, (err, events) => {
     // DB Error
     if (err) return e.dbFindError(err, res);
