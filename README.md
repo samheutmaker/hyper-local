@@ -1,2 +1,3 @@
-# event-list
-A MEAN stack app for posting and finding events near you.
+# HyperLocal API
+
+
