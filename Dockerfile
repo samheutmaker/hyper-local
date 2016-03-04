@@ -1,4 +1,4 @@
-FROM node:latest
+ FROM node:4.3.2
 
 # Create app directory
 RUN mkdir -p /usr/src/app
@@ -11,5 +11,5 @@ RUN npm install
 # Bundle app source
 COPY . /usr/src/app
 
-EXPOSE 8080
-CMD [ "npm", "start" ]
+EXPOSE 8888
+CMD [ "node", "server.js" ]
