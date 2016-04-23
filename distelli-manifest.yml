@@ -35,7 +35,6 @@ samheutmaker/hyper-local:
 
   PostInstall:
     - echo "Begin PostInstall"
-    - npm install
 
   Env:
     - PORT: 8888

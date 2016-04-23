@@ -106,7 +106,8 @@ eventRouter.post('/create', mAuth(), jsonParser, location,
 // Update Event
 eventRouter.put('/update/:id', mAuth(), (req, res) => {
   Event.update({
-    _id: req.params.id
+    _id: req.params.id,
+    active: true
   }, req.body, (err, event) => {
     // DB Error
     if (err) return e.dbSaveError(err, res);
